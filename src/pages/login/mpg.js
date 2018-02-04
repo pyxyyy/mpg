@@ -1,5 +1,4 @@
-
-export function send_(sender, receiver, amount) {
+export function send(sender, receiver, amount) {
   if (amount < 0) {
     throw "Invalid amount!";
   }
@@ -11,7 +10,6 @@ export function requestFunds(requester, sender, amount) {
   if (amount < 0) {
     throw "Invalid amount!";
   }
-  //request(ID);
   //checkSignature(ID);
   //mpg.py(sender, requester)
 }
