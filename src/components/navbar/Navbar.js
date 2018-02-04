@@ -11,11 +11,6 @@ class NavBar extends Component {
             <table className="NavBar-table">
                 <tbody>
                 <tr>
-                    <td align="center" onClick={() => {this.props.setSelected(0)}}>
-                        {this.props.selected === 0
-                            ? <div className="selected"><img className="NavBar-icon" src={require('./home.svg')} /></div>
-                            : <img className="NavBar-icon" src={require('./home.svg')} />}
-                    </td>
                     <td align="center" onClick={() => {this.props.setSelected(1)}}>
                         {this.props.selected === 1
                             ? <div className="selected"><img className="NavBar-icon" src={require('./signature.svg')} /></div>

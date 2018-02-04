@@ -1,42 +1,33 @@
 import React, { Component } from 'react';
 import './Transfer.css';
 
-const contract = "https://sandbox.esignlive.com/auth?signerAuthenticationToken=YTY3ZmFlZTItMzI1OS00NGNlLWEzYWYtZDI2ODc1MzdkMzNh&target=https%3A%2F%2Fsandbox.esignlive.com%2Fpackages%2FrAGXKD21L4a5NKJRymb_O3PZ108%3D%2Fsign";
-
-const Echo = React.createClass({
-	getInitialState(){
-  	return { messages : [] }
-  },
-  componentDidMount(){
-    // this is an "echo" websocket service
-  	this.connection = new WebSocket('wss://10.3.17.204:9091');
-    // listen to onmessage event
-    this.connection.onmessage = evt => {
-      // add the new message to state
-    	this.setState({
-      	messages : this.state.messages.concat([ evt.data ])
-      })
-    };
-
-    // for testing purposes: sending to the echo service which will send it back back
-    setInterval( _ =>{
-    	this.connection.send( Math.random() )
-    }, 2000 )
-  },
-  render: function() {
-    // slice(-5) gives us the five most recent messages
-    return <ul>{ this.state.messages.slice(-5).map( (msg, idx) => <li key={'msg-' + idx }>{ msg }</li> )}</ul>;
-  }
-});
+const contract = "https://sandbox.esignlive.com/auth?signerAuthenticationToken=Zjg3NWIzY2YtNTlkMS00ODU4LTliYTgtZTRlMGYyZGIyOTAw&target=https%3A%2F%2Fsandbox.esignlive.com%2Fpackages%2FlHVf9ZBFvFvMML00Lfg1m_wJWTg%3D%2Fsign";
 
 class Transfer extends Component {
     constructor(props) {
         super(props);
         this.state = {
             chosen:false,
-            modal: false
+            modal: false,
+            messages: []
         }
     }
+
+    componentDidMount(){
+        // this is an "echo" websocket service
+        this.connection = new WebSocket('wss://10.3.17.204:9091');
+        // listen to onmessage event
+        this.connection.onmessage = evt => {
+            // add the new message to state
+            this.setState({
+                messages : this.state.messages.concat([ evt.data ])
+            })
+        };
+    }
+
+    connect = () => {
+        this.connection.send(Math.random());
+    };
 
     renderModal = () => {
         return (
@@ -61,7 +52,7 @@ class Transfer extends Component {
                 </div>
                 <div className="Transfer-buttons">
                     <div className="Transfer-button-wrapper">
-                        <button className="Transfer-button" onClick={() => {window.open("https://www.google.com"); setTimeout(() => {
+                        <button className="Transfer-button" onClick={() => {window.open(contract);  this.connect(); setTimeout(() => {
                             this.renderModal();
                         }, 2000)}}>
                             <img className="payicon" src={require('./pay.svg')} />
@@ -78,7 +69,7 @@ class Transfer extends Component {
 
             </div>
         );
-    }
+    };
 
     renderChosen = () => {
         return (
@@ -110,7 +101,7 @@ class Transfer extends Component {
 
             <div className="Transfer-buttons">
                 <div className="Transfer-button-wrapper">
-                <button className="Transfer-button" onClick={() => {window.open(contract); Echo(); setTimeout(() => {
+                <button className="Transfer-button" onClick={() => {window.open(contract); setTimeout(() => {
                     this.setState({modal: true});
                 }, 2000)}}>
                     <img className="payicon" src={require('./pay.svg')} />

@@ -12,7 +12,7 @@ class Home extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            selected: 2
+            selected: 1
         }
     }
 
@@ -25,20 +25,14 @@ class Home extends Component {
     render() {
         let renderHome = null;
         switch (this.state.selected) {
-            case (0):
-                renderHome = <div className="Home">
-                    <Header text="SOMETHING"/>
-                    <NavBar selected={this.state.selected} setSelected={this.setSelected}/>
-                </div>;
-                break;
-            case (1):
+            case (2):
                 renderHome = <div className="Home">
                     <Header text="PAST TRANSACTIONS"/>
                     <History/>
                     <NavBar selected={this.state.selected} setSelected={this.setSelected}/>
                 </div>;
                 break;
-            case (2):
+            case (1):
                 renderHome = <div className="Home">
                     <Header text="TRANSFER MONEY"/>
                     <Transfer/>
