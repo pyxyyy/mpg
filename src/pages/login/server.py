@@ -1,47 +1,27 @@
-from autobahn.twisted.websocket import WebSocketServerProtocol, WebSocketServerFactory
-import base64
+import socket
 import sys
-from twisted.python import log
-from twisted.internet import reactor
 
-class MyServerProtocol(WebSocketServerProtocol):
+sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server_address = ('localhost', 8000)
+print >>sys.stderr, 'starting up on %s port %s' % server_address
+sock.bind(server_address)
 
-    def onConnect(self, request):
-        print("Client connecting: {}".format(request.peer))
+sock.listen(1)
 
-    def onOpen(self):
-        print("WebSocket connection open.")
-
-        def hello():
-            with open("/var/www/html/img/image.png", "rb") as image_file:
-                encoded_string = base64.b64encode(image_file.read())
-            self.sendMessage(encoded_string.encode('utf8'))
-            self.factory.reactor.callLater(0.2, hello)
-
-        # start sending messages every 20ms ..
-        hello()
-
-    def onMessage(self, payload, isBinary):
-        if isBinary:
-            print("Binary message received: {} bytes".format(len(payload)))
-        else:
-            print("Text message received: {}".format(payload.decode('utf8')))
-
-        # echo back message verbatim
-        self.sendMessage(payload, isBinary)
-
-    def onClose(self, wasClean, code, reason):
-        print("WebSocket connection closed: {}".format(reason))
+while True:
+	print >>sys.stderr, 'waiting for a connection'
+	connection, client_address = sock.accept()
+	try:
+		print >>sys.stderr, 'connection from', client_address
+		while True:
+			data = connection.recv(16)
+			print >>sys.stderr, 'received "%s"' % data
+			if data:
+				conection.sendall(data)
+			else:
+				break
+	finally:
+		connection.close()
 
 
-if __name__ == '__main__':
-    log.startLogging(sys.stdout)
 
-    factory = WebSocketServerFactory(u"ws://127.0.0.1:50007")
-    factory.protocol = MyServerProtocol
-    # factory.setProtocolOptions(maxConnections=2)
-
-    # note to self: if using putChild, the child must be bytes...
-
-    reactor.listenTCP(50007, factory)
-    reactor.run()

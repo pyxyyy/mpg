@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Login.css';
-import mpg from "./mpg";
+import {send_} from "./mpg";
 
 
 
@@ -63,7 +63,7 @@ class Login extends Component {
                        }}
                 />
                 <button className="Login-button"
-                        onClick={() => {mpg()}}
+                        onClick={() => {send_()}}
                         onKeyDown={(e) => { if (e.keyCode === 13) this.login(); }}>Login</button>
                 <div className="Login-forgot">Forgot password</div>
             </div>

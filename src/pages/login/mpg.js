@@ -1,17 +1,31 @@
-function mpg() {
-const dwolla = require('dwolla-v2');
 
-// Navigate to https://www.dwolla.com/applications (production) or https://dashboard-sandbox.dwolla.com/applications (Sandbox) for your application key and secret.
-const appKey = "PkAsSdVJyZbUZSB7RkCd636M1CsgF6KKeZrt6ilq8xSMw9uMXc";
-const appSecret = "8Lo1LatM1cVAhEmpPEZ9Es0btxiZFF6PVAUl4xp14LTOsccHBl";
-const client = new dwolla.Client({
-  key: appKey,
-  secret: appSecret,
-  environment: 'sandbox' // optional - defaults to production
-});
-
-// create a token
-client.auth.client()
+export function send_(sender, receiver, amount) {
+  if (amount < 0) {
+    throw "Invalid amount!";
+  }
+  //checkSignature(ID)
+  //runPyScript('5582faeb-423d-4965-bd6f-8c650f868fd9', '5eaa7d0a-c1d9-45fe-88ed-4b715246aab5', '500.00')
 }
 
-mpg()
+export function requestFunds(requester, sender, amount) {
+  if (amount < 0) {
+    throw "Invalid amount!";
+  }
+  //request(ID);
+  //checkSignature(ID);
+  //mpg.py(sender, requester)
+}
+
+export function request(ID) {
+
+}
+
+export function checkSignature(ID) {
+  var SIGNATURE = request(ID);
+  if (!SIGNATURE) {
+    throw "Invalid Signature!";
+  //} else {
+    // DO NOTHING
+  //}
+}
+
