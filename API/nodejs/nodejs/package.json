@@ -1,0 +1,25 @@
+{
+  "name": "forms-in-nodejs",
+  "version": "1.0.0",
+  "description": "This example shows how to use forms in Node.js",
+  "main": "server.js",
+  "scripts": {
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\"",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/harishaidary/nodejs.git"
+  },
+  "author": "Haris Haidary",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/harishaidary/nodejs/issues"
+  },
+  "homepage": "https://github.com/harishaidary/nodejs#readme",
+  "dependencies": {
+    "async": "^2.0.0-rc.6",
+    "formidable": "^1.0.17",
+    "request": "^2.72.0"
+  }
+}
