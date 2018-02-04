@@ -4,20 +4,20 @@ var client = new dwolla.Client({id: "...", secret: "..."});
 
 var appToken = new client.Token({access_token: "GnlMMOlLLTTwRRC44gGPkjfsVbVtwzkptDVdIB0fwGwLnV481N"});
 
-var requestBody = {
-  _links: {
-    source: {
-      href: 'https://api-sandbox.dwolla.com/funding-sources/118b08b9-e1eb-48b7-94ad-866989b0764e'
-    },
-    destination: {
-      href: 'https://api-sandbox.dwolla.com/funding-sources/2fa64102-185d-443d-9001-dda9bc37651d'
-    }
-  },
-  amount: {
-    currency: 'USD',
-    value: '1.00'
-  }
-};
+// var requestBody = {
+//   _links: {
+//     source: {
+//       href: 'https://api-sandbox.dwolla.com/funding-sources/118b08b9-e1eb-48b7-94ad-866989b0764e'
+//     },
+//     destination: {
+//       href: 'https://api-sandbox.dwolla.com/funding-sources/2fa64102-185d-443d-9001-dda9bc37651d'
+//     }
+//   },
+//   amount: {
+//     currency: 'USD',
+//     value: '1.00'
+//   }
+// };
 
 appToken
   .post('transfers', requestBody)
