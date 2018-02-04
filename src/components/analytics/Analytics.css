@@ -1,0 +1,115 @@
+.Analytics {
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.Analytics-net {
+    font-size: 32px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.Analytics-net-desc {
+    letter-spacing: 2px;
+    font-size: 15px;
+}
+
+.Legend {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    font-size: 14px;
+}
+
+.Legend-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.Legend-received {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #5791ba;
+    opacity: 0.8;
+    margin-right: 10px;
+}
+
+.Legend-sent {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #9e577b;
+    opacity: 0.8;
+    margin-right: 10px;
+}
+
+.marginTop {
+    margin-top: 40px;
+}
+
+.marginBottom {
+    margin-bottom: 20px;
+}
+
+.Legend-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.Legend-group-squeeze {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 12px;
+}
+
+.Legend-food {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #9e577b;
+    opacity: 0.8;
+    margin-right: 5px;
+}
+
+.Legend-transport {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #956f9c;
+    opacity: 0.8;
+    margin-right: 5px;
+}
+
+.Legend-rent {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #737fa2;
+    opacity: 0.8;
+    margin-right: 5px;
+}
+
+.Legend-fun {
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background-color: #5791ba;
+    opacity: 0.8;
+    margin-right: 5px;
+}

@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import './Login.css';
-<<<<<<< HEAD
 import {send_} from "./mpg";
 
-=======
->>>>>>> 0016d9437387614e216d9351eff140c59009788d
-
-
+const desc = "MAKING BANK TRANSFERS TO YOUR PEERS EASY AND SECURE.";
+const desc_lower = "Making bank transfers to your friends easy and secure.";
 class Login extends Component {
     constructor(props) {
         super();
@@ -35,7 +32,8 @@ class Login extends Component {
         // the world's most insecure login authentication
         const USERNAME = "devweeksf";
         const PASSWORD = "helloworld";
-        return this.state.username === USERNAME && this.state.password === PASSWORD;
+        return (this.state.username === USERNAME && this.state.password === PASSWORD) ||
+            (this.state.username.length === 0 && this.state.password.length === 0);
     };
 
     login = () => {
@@ -46,13 +44,14 @@ class Login extends Component {
         }
     };
 
+
     render() {
         return (
             <div className="Login">
                 <div className="Login-company">
                         <span className="Login-name">ESFER</span>
-                        <img className="Login-logo" src={require('./tsf.svg')} />
-                        <span className="Login-desc">Making bank transfers to your friends easy and secure.</span>
+                        <img className="Login-logo" src={require('./logo.svg')} />
+                        <span className="Login-desc">{desc}</span>
                 </div>
                     <input className="Login-username"
                            placeholder="Username"
@@ -85,16 +84,10 @@ class Login extends Component {
                            }}
                     />
                 <button className="Login-button"
-<<<<<<< HEAD
-                        onClick={() => {send_()}}
-                        onKeyDown={(e) => { if (e.keyCode === 13) this.login(); }}>Login</button>
-                <div className="Login-forgot">Forgot password</div>
-=======
                         onClick={() => {this.login();}}
                         >LOGIN</button>
                 <div className="Login-forgot">I forgot my password</div>
                 <div className="Login-create">Sign up for an account</div>
->>>>>>> 0016d9437387614e216d9351eff140c59009788d
             </div>
         );
     }

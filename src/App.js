@@ -21,7 +21,7 @@ class App extends Component {
         let renderDiv = null;
         switch (this.state.page) {
             case ("login"):
-                renderDiv = <Login setPage={this.setPage} />;
+                renderDiv = <div><script src="https://facebook.github.io/react/js/jsfiddle-integration-babel.js"></script><div id="container"><Login setPage={this.setPage} /></div></div>;
                 break;
             case ("home"):
                 renderDiv = <Home setPage={this.setPage} />;

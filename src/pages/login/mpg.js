@@ -24,6 +24,6 @@ export function checkSignature(ID) {
     throw "Invalid Signature!";
   //} else {
     // DO NOTHING
-  //}
+  }
 }
 
