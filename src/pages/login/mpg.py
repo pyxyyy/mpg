@@ -1,11 +1,14 @@
 import dwollav2
 import sys
 
-data = sys.argv
-source = data[1]
-dest = data[2]
-amount = data[3]
+#data = sys.argv
+#source = data[1]
+#dest = data[2]
+#amount = data[3]
 
+source = '5582faeb-423d-4965-bd6f-8c650f868fd9'
+dest = '5eaa7d0a-c1d9-45fe-88ed-4b715246aab5'
+amount = '100.00'
 
 client = dwollav2.Client(
   id =  'PkAsSdVJyZbUZSB7RkCd636M1CsgF6KKeZrt6ilq8xSMw9uMXc',
@@ -13,7 +16,7 @@ client = dwollav2.Client(
   environment = 'sandbox'
 )
 
-app_token = client.Token(access_token = 'QeC81pYZ4J6bXEgkCIMrbjnKSDGTL2zuuDg35YEY0nWRMjzoqK')
+app_token = client.Token(access_token = 'fswTS5QVRapWXXXUuBnb1PyWbPMZyHT3zvDEFwIse434q4baMb')
 
 request_body = {
   '_links': {
