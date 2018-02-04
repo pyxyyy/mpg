@@ -33,7 +33,7 @@ var eslFunctions = module.exports =
 			  formData: 
 			   { file: 
 			      { value: document,
-			        options: { filename:  '0', contentType: null } },
+			        options: { filename: '0', contentType: null }},
 			     payload: jsonPayload } 
 		};
 
