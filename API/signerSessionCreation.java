@@ -14,16 +14,23 @@ public class signerSessionCreation {
 
 
 		//insert document name, first name, last name, transaction name, generic file,
-		DocumentPackage testPackage = PackageBuilder.newPackageNamed("Example Package")
-				.withSigner(SignerBuilder.newSignerWithEmail("smellysocks12314@gmail.com")
+		DocumentPackage testPackage = PackageBuilder.newPackageNamed("Example hadar")
+				.withSigner(SignerBuilder.newSignerWithEmail("teukgong@dae.com")
+						.withFirstName("Wen")
+						.withLastName("Rui")
+						.withCustomId("Signer1"))
+				.withSigner(SignerBuilder.newSignerWithEmail("teukjeon@sa.com")
 						.withFirstName("John")
 						.withLastName("Smith")
-						.withCustomId("Signer1"))
+						.withCustomId("Signer2"))
 				.withDocument(DocumentBuilder.newDocumentWithName("Test Document")
-						.fromFile("C:/Users/Wen Rui/Google Drive/Berkeley/DevHacks/mpg/API/dummyDoc.pdf")
-						.withSignature(SignatureBuilder.signatureFor("wenrui@berkeley.edu")
-								.atPosition(100, 100)
-								.onPage(0)))
+						.fromFile("/Users/syang2016/devweek/mpg/API/dummyDoc.pdf")
+						.withSignature(SignatureBuilder.captureFor("teukgong@dae.com")
+                        .atPosition(100, 100)
+                        .onPage(0))
+                        .withSignature(SignatureBuilder.captureFor("teukjeon@sa.com")
+                                .atPosition(500, 100)
+                                .onPage(0)))
 				.build();
 		
 		PackageId packageId = eslClient.createAndSendPackage(testPackage);

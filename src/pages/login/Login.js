@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import './Login.css';
+<<<<<<< HEAD
+import {send_} from "./mpg";
+
+=======
+>>>>>>> 0016d9437387614e216d9351eff140c59009788d
 
 
 class Login extends Component {
@@ -80,10 +85,16 @@ class Login extends Component {
                            }}
                     />
                 <button className="Login-button"
+<<<<<<< HEAD
+                        onClick={() => {send_()}}
+                        onKeyDown={(e) => { if (e.keyCode === 13) this.login(); }}>Login</button>
+                <div className="Login-forgot">Forgot password</div>
+=======
                         onClick={() => {this.login();}}
                         >LOGIN</button>
                 <div className="Login-forgot">I forgot my password</div>
                 <div className="Login-create">Sign up for an account</div>
+>>>>>>> 0016d9437387614e216d9351eff140c59009788d
             </div>
         );
     }
