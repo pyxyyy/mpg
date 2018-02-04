@@ -16,7 +16,6 @@ class NavBar extends Component {
                     <span className="Account-name">Jane Doe</span>
                     <img className="Account-edit" src={require('./edit.svg')} />
                 </div>
-                <span className="Account-rank">SPROUTING SEEDLING</span>
             </div>
             <div className="Account-controls">
                 <span className="Account-control" >Change Password</span>

@@ -1,0 +1,38 @@
+.Transaction {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    width: 414px;
+}
+
+.Transaction-avatar {
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    width: 50px;
+    height: 50px
+}
+
+.Transaction-message {
+    color: black;
+    width: 200px;
+    margin-top: 70px;
+}
+
+.Transaction-amount {
+    position: absolute;
+    top: 40px;
+    right: 35px;
+    font-size: 20px;
+}
+
+.Transaction-line {
+    margin-top: 119px;
+    height: 1px;
+    width: 414px;
+    background: linear-gradient(135deg, #5791ba 0, #9e577b);;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(25%, #5791ba), color-stop(75%, #9e577b));
+}
