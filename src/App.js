@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Login from "./pages/login/Login";
+import Home from "./pages/home/Home";
 
 class App extends Component {
     constructor(props) {
@@ -21,7 +21,14 @@ class App extends Component {
         let renderDiv = null;
         switch (this.state.page) {
             case ("login"):
-                renderDiv = <Login setPage={this.setPage} />
+                renderDiv = <Login setPage={this.setPage} />;
+                break;
+            case ("home"):
+                renderDiv = <Home setPage={this.setPage} />;
+                break;
+            default:
+                renderDiv = <Login setPage={this.setPage}/>;
+                break;
         }
         return renderDiv;
   }

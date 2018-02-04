@@ -1,20 +1,12 @@
 package example.codes;
 
-import java.io.BufferedReader;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
+import javax.net.ssl.HttpsURLConnection;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.nio.file.Files;
-
-import javax.net.ssl.HttpsURLConnection;
 
 public class CreateAndSendPackageRest {
 
@@ -28,7 +20,7 @@ public class CreateAndSendPackageRest {
 		File uploadFile1 = new File("C:/Users/Wen Rui/Google Drive/Berkeley/DevHacks/mpg/API/dummyDoc.pdf");
 		String boundary = Long.toHexString(System.currentTimeMillis());
 		String CRLF = "\r\n"; // Line separator used in multipart/form-data.
-		String jsonContent = "{\"roles\":[{\"locked\":false,\"emailMessage\":{\"content\":\"\"},\"attachmentRequirements\":[],\"reassign\":false,\"specialTypes\":[],\"id\":\"Sender\",\"data\":null,\"type\":\"SIGNER\",\"index\":0,\"signers\":[{\"auth\":{\"challenges\":[],\"scheme\":\"NONE\"},\"company\":\"Silanis\",\"firstName\":\"yourFirst\",\"lastName\":\"yourLast\",\"phone\":\"\",\"email\":\"wenrui@berkeley.edu\",\"knowledgeBasedAuthentication\":null,\"language\":\"en\",\"title\":\"Silanis\",\"external\":null,\"professionalIdentityFields\":[],\"userCustomFields\":[],\"delivery\":{\"email\":true,\"provider\":false,\"download\":true},\"group\":null,\"signature\":null,\"address\":null,\"data\":null,\"name\":\"\",\"specialTypes\":[]}],\"name\":\"Sender\"},{\"locked\":false,\"emailMessage\":{\"content\":\"\"},\"attachmentRequirements\":[],\"reassign\":false,\"specialTypes\":[],\"id\":\"Signer\",\"data\":null,\"type\":\"SIGNER\",\"index\":0,\"signers\":[{\"auth\":{\"challenges\":[],\"scheme\":\"NONE\"},\"company\":\"\",\"firstName\":\"signerFirst\",\"lastName\":\"signerLast\",\"phone\":\"\",\"email\":\"smellysocks12314@gmail.com\",\"knowledgeBasedAuthentication\":null,\"language\":\"en\",\"title\":\"\",\"external\":null,\"professionalIdentityFields\":[],\"userCustomFields\":[],\"delivery\":{\"email\":false,\"provider\":false,\"download\":false},\"group\":null,\"id\":\"Signer\",\"signature\":null,\"address\":null,\"data\":null,\"name\":\"\",\"specialTypes\":[]}],\"name\":\"Signer\"}],\"documents\": [{\"approvals\":[{\"role\":\"Signer\",\"signed\":null,\"accepted\":null,\"data\":null,\"fields\":[{\"page\":0,\"subtype\":\"FULLNAME\",\"width\":200,\"binding\":null,\"extract\":false,\"extractAnchor\":null,\"left\":175,\"top\":165,\"validation\":null,\"height\":50,\"data\":null,\"type\":\"SIGNATURE\",\"value\":\"\"}],\"name\":\"\"},{\"role\":\"Sender\",\"signed\":null,\"accepted\":null,\"data\":null,\"fields\":[{\"page\":0,\"subtype\":\"FULLNAME\",\"width\":200,\"binding\":null,\"extract\":false,\"extractAnchor\":null,\"left\":550,\"top\":165,\"validation\":null,\"height\":50,\"data\":null,\"type\":\"SIGNATURE\",\"value\":\"\"}],\"name\":\"\"}],\"name\": \"sampleAgreement\"}],\"name\": \"Test Package REST\", \"type\":\"PACKAGE\", \"language\":\"en\", \"emailMessage\":\"\", \"description\":\"New Package\",\"autoComplete\":true,\"status\":\"SENT\"}";
+		String jsonContent = "{\"roles\":[{\"locked\":false,\"emailMessage\":{\"content\":\"\"},\"attachmentRequirements\":[],\"reassign\":false,\"specialTypes\":[],\"id\":\"Sender\",\"data\":null,\"type\":\"SIGNER\",\"index\":0,\"signers\":[{\"auth\":{\"challenges\":[],\"scheme\":\"NONE\"},\"company\":\"Silanis\",\"firstName\":\"yourFirst\",\"lastName\":\"yourLast\",\"phone\":\"\",\"email\":\"wenrui@berkeley.edu\",\"knowledgeBasedAuthentication\":null,\"language\":\"en\",\"title\":\"Silanis\",\"external\":null,\"professionalIdentityFields\":[],\"userCustomFields\":[],\"delivery\":{\"email\":true,\"provider\":false,\"download\":true},\"group\":null,\"signature\":null,\"address\":null,\"data\":null,\"name\":\"\",\"specialTypes\":[]}],\"name\":\"Sender\"},{\"locked\":false,\"emailMessage\":{\"content\":\"\"},\"attachmentRequirements\":[],\"reassign\":false,\"specialTypes\":[],\"id\":\"Signer\",\"data\":null,\"type\":\"SIGNER\",\"index\":0,\"signers\":[{\"auth\":{\"challenges\":[],\"scheme\":\"NONE\"},\"company\":\"\",\"firstName\":\"signerFirst\",\"lastName\":\"signerLast\",\"phone\":\"\",\"email\":\"seungjin@berkeley.edu\",\"knowledgeBasedAuthentication\":null,\"language\":\"en\",\"title\":\"\",\"external\":null,\"professionalIdentityFields\":[],\"userCustomFields\":[],\"delivery\":{\"email\":false,\"provider\":false,\"download\":false},\"group\":null,\"id\":\"Signer\",\"signature\":null,\"address\":null,\"data\":null,\"name\":\"\",\"specialTypes\":[]}],\"name\":\"Signer\"}],\"documents\": [{\"approvals\":[{\"role\":\"Signer\",\"signed\":null,\"accepted\":null,\"data\":null,\"fields\":[{\"page\":0,\"subtype\":\"FULLNAME\",\"width\":200,\"binding\":null,\"extract\":false,\"extractAnchor\":null,\"left\":175,\"top\":165,\"validation\":null,\"height\":50,\"data\":null,\"type\":\"SIGNATURE\",\"value\":\"\"}],\"name\":\"\"},{\"role\":\"Sender\",\"signed\":null,\"accepted\":null,\"data\":null,\"fields\":[{\"page\":0,\"subtype\":\"FULLNAME\",\"width\":200,\"binding\":null,\"extract\":false,\"extractAnchor\":null,\"left\":550,\"top\":165,\"validation\":null,\"height\":50,\"data\":null,\"type\":\"SIGNATURE\",\"value\":\"\"}],\"name\":\"\"}],\"name\": \"sampleAgreement\"}],\"name\": \"Test Package REST\", \"type\":\"PACKAGE\", \"language\":\"en\", \"emailMessage\":\"\", \"description\":\"New Package\",\"autoComplete\":true,\"status\":\"SENT\"}";
 		
 		HttpsURLConnection connection = null;
 		URL url = new URL(requestURL);

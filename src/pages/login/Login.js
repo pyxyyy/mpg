@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import './Login.css';
+<<<<<<< HEAD
 import {send_} from "./mpg";
 
+=======
+>>>>>>> 0016d9437387614e216d9351eff140c59009788d
 
 
 class Login extends Component {
@@ -10,6 +13,8 @@ class Login extends Component {
         this.state = {
             username: "",
             password: "",
+            usernameFocused: false,
+            passwordFocused: false
         }
     }
 
@@ -44,28 +49,52 @@ class Login extends Component {
     render() {
         return (
             <div className="Login">
-                <div className="Login-name" />
-                <div className="Login-name-overlay">Esfer</div>
-                <div className="Login-username-base">
-                    <input className="Login-username"
-                       placeholder="Username"
-                       value={this.state.username}
-                       onChange={(e) => {
-                           this.updateUsername();
-                       }}
-                    />
+                <div className="Login-company">
+                        <span className="Login-name">ESFER</span>
+                        <img className="Login-logo" src={require('./tsf.svg')} />
+                        <span className="Login-desc">Making bank transfers to your friends easy and secure.</span>
                 </div>
-                <input className="Login-password"
-                       placeholder="Password"
-                       value={this.state.password}
-                       onChange={(e) => {
-                           this.updatePassword();
-                       }}
-                />
+                    <input className="Login-username"
+                           placeholder="Username"
+                           value={this.state.username}
+                           onChange={(e) => {
+                               this.updateUsername(e.target.value);
+                           }}
+                           onFocus={() => {
+                               this.setState({ usernameFocused: true })
+                           }}
+                           onBlur={() => {
+                               this.setState({ usernameFocused: false })
+                           }}
+                    />
+                    <input className="Login-username"
+                           type="password"
+                           placeholder="Password"
+                           value={this.state.password}
+                           onChange={(e) => {
+                               this.updatePassword(e.target.value);
+                           }}
+                           onKeyDown={(e) => {
+                               if (e.keyCode === 13) this.login();
+                           }}
+                           onFocus={() => {
+                               this.setState({ passwordFocused: true })
+                           }}
+                           onBlur={() => {
+                               this.setState({ passwordFocused: false })
+                           }}
+                    />
                 <button className="Login-button"
+<<<<<<< HEAD
                         onClick={() => {send_()}}
                         onKeyDown={(e) => { if (e.keyCode === 13) this.login(); }}>Login</button>
                 <div className="Login-forgot">Forgot password</div>
+=======
+                        onClick={() => {this.login();}}
+                        >LOGIN</button>
+                <div className="Login-forgot">I forgot my password</div>
+                <div className="Login-create">Sign up for an account</div>
+>>>>>>> 0016d9437387614e216d9351eff140c59009788d
             </div>
         );
     }

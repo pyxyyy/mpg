@@ -1,5 +1,6 @@
 .Login {
     background-color: white;
+    background: linear-gradient(135deg, #5791ba 0, #9e577b);
     height: 100vh;
     font-family: "Avenir Next", sans-serif;
     display: flex;
@@ -7,72 +8,97 @@
     align-items: center;
 }
 
-.Login-name {
-    height: 200px;
-    width: 200px;
-    border-radius: 200px;
-    color: white;
-    background: linear-gradient(90deg,#03d2b3 0,#0988f5);
-    box-shadow: 0 2px 15px rgba(5,201,185,.37);
+.Login-company {
     position: relative;
-}
-
-.Login-name-overlay {
-    position: absolute;
-    height: 194px;
-    width: 194px;
-    border-radius: 200px;
-    color: black;
-    background-color: white;
-    top: 3px;
-    text-align: center;
+    color: white;
+    margin-top: 70px;
+    margin-bottom: 10px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    font-size: 24px;
 }
 
-.Login-username-base {
-    background: linear-gradient(90deg,#03d2b3 0,#0988f5);
-    height: 30px;
+.Login-name {
+    font-size: 28px;
+    position: absolute;
+    top: 42px;
+    letter-spacing: 10px;
+}
+
+.Login-logo {
+    width: 300px;
+    height: 300px;
+}
+
+.Login-desc {
+    position: absolute;
+    top: 225px;
+    text-align: center;
+    width: 200px;
+    font-size: 14px;
+    color: white;
 }
 
 .Login-username {
+    background: transparent;
+    height: 22px;
+    width: 292px;
     border: none;
     outline: none;
-    width: 260px;
     text-align: center;
     color: white;
     padding: 2px 0 5px 0;
-    margin: 0 0 5px 0;
     font-size: 14px;
     font-family: "Avenir Next", sans-serif;
     z-index: 1;
+    border-bottom: solid 1px white;
+    margin: 5px 0;
 }
 
-.Login-password {
-
-    border: none;
-    outline: none;
-    width: 260px;
-    text-align: center;
+.Login-username::placeholder {
     color: white;
-    padding: 2px 0 5px 0;
-    margin: 0 0 5px 0;
-    font-size: 14px;
-    font-family: "Avenir Next", sans-serif;
-    z-index: 1;
+}
+
+.Login-username:focus::placeholder {
+    color: transparent;
 }
 
 .Login-button {
+    margin-top: 20px;
     background: linear-gradient(90deg,#03d2b3 0,#0988f5);
     box-shadow: 0 2px 15px rgba(5,201,185,.37);
-    width: 280px;
-    height: 35px;
+    background: rgba(256, 256,256,0.2);
+    box-shadow: none;
+    width: 300px;
+    height: 38px;
     border-radius: 20px;
     outline: none;
     border: none;
     color: white;
+    font-size: 12px;
+    font-family: "Avenir Next", sans-serif;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+}
+
+.Login-create {
+    position: absolute;
+    bottom: 0;
     font-size: 14px;
+    color: white;
+    width: 414px;
+    height: 50px;
+    background-color: rgba(256,256,256,0.2);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: "AvenirNext-Medium", sans-serif;
+    box-shadow: 0px -2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.Login-forgot {
+    font-size: 13px;
+    color: #f1f1f1;
+    margin-top: 15px;
 }
