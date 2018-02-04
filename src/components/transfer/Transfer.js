@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Transfer.css';
 
-const contract = "https://sandbox.esignlive.com/auth?signerAuthenticationToken=YTY3ZmFlZTItMzI1OS00NGNlLWEzYWYtZDI2ODc1MzdkMzNh&target=https%3A%2F%2Fsandbox.esignlive.com%2Fpackages%2FrAGXKD21L4a5NKJRymb_O3PZ108%3D%2Fsign\n";
+const contract = "https://sandbox.esignlive.com/auth?signerAuthenticationToken=YTY3ZmFlZTItMzI1OS00NGNlLWEzYWYtZDI2ODc1MzdkMzNh&target=https%3A%2F%2Fsandbox.esignlive.com%2Fpackages%2FrAGXKD21L4a5NKJRymb_O3PZ108%3D%2Fsign";
 
 class Transfer extends Component {
     constructor(props) {
