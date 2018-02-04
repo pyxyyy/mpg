@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Transfer.css';
 
-const contract = "https://sandbox.esignlive.com/auth?signerAuthenticationToken=NWNmZGE3ZTAtZDA5Yy00MzYxLWI1NmQtMjg4YmJhZDQ3ZmY2&target=https%3A%2F%2Fsandbox.esignlive.com%2Fpackages%2FpN9qVtDODVRRg49VQq8xbGsCDTw%3D%2Fsign";
+const contract = "https://sandbox.esignlive.com/auth?signerAuthenticationToken=ZWNlMmMyNjgtZjk1MS00NTNhLWEyNzItNTViZmY0YjJmODA4&target=https%3A%2F%2Fsandbox.esignlive.com%2Fpackages%2FeoSnJukg3SlheSTYw9_KQhiXWfE%3D%2Fsign";
 
 class Transfer extends Component {
     constructor(props) {
@@ -20,7 +20,7 @@ class Transfer extends Component {
                 </div>
 
                 <div className="bigcircle">
-                    <img className="circle1-img" src={require('./wr.png')} />
+                    <img className="circle1-img" src={require('./john.png')} />
                 </div>
                 <span className="john">
                     JOHN DOE
@@ -81,7 +81,7 @@ class Transfer extends Component {
                         <img className="circle1-img" src={require('./eunice.png')} />
                     </div>
                     <div className="circle1">
-                        <img className="circle1-img" src={require('./john.jpg')}
+                        <img className="circle1-img" src={require('./john.png')}
                              onClick={() => {
                                  this.setState({
                                      chosen: true
