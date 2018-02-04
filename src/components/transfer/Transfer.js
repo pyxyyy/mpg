@@ -7,8 +7,51 @@ class Transfer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            chosen:false
+            chosen:false,
+            modal: false
         }
+    }
+
+    renderModal = () => {
+        return (
+            <div className="Transfer-modal">
+
+                <div className="back" onClick={() => {this.setState({chosen: false})}}>
+                    <img className="back" src={require('./back.svg')} />
+                </div>
+
+                <div className="bigcircle">
+                    <img className="circle1-img" src={require('./john.png')} />
+                </div>
+                <span className="john">
+                    JOHN DOE
+                    <img className="star" src={require('./star.svg')} />
+                    <span className="john-user">@johndoe</span>
+                </span>
+                <img className="doubletick" src={require('./doubletick.svg')} />
+                <span className="approved">Nice! Your payment of $15.00 to John has been fulfilled.</span>
+                <div className="button-wrapper-main">
+                    <button className="button-main">LOAD PAST TRANSACTIONS</button>
+                </div>
+                <div className="Transfer-buttons">
+                    <div className="Transfer-button-wrapper">
+                        <button className="Transfer-button" onClick={() => {window.open("https://www.google.com"); setTimeout(() => {
+                            this.renderModal();
+                        }, 2000)}}>
+                            <img className="payicon" src={require('./pay.svg')} />
+                        </button>
+                        <span className="pay">PAY</span>
+                    </div>
+                    <div className="Transfer-button-wrapper">
+                        <button className="Transfer-button" onClick={() => {window.open("https://www.google.com")}}>
+                            <img className="receiveicon" src={require('./receive.svg')} />
+                        </button>
+                        <span className="receive">REQUEST</span>
+                    </div>
+                </div>
+
+            </div>
+        );
     }
 
     renderChosen = () => {
@@ -41,7 +84,9 @@ class Transfer extends Component {
 
             <div className="Transfer-buttons">
                 <div className="Transfer-button-wrapper">
-                <button className="Transfer-button" onClick={() => {window.open("https://www.google.com"); setTimeout(() => {}, 2000)}}>
+                <button className="Transfer-button" onClick={() => {window.open(contract); setTimeout(() => {
+                    this.setState({modal: true});
+                }, 2000)}}>
                     <img className="payicon" src={require('./pay.svg')} />
                 </button>
                     <span className="pay">PAY</span>
@@ -121,7 +166,10 @@ class Transfer extends Component {
     };
 
     render() {
-        return <div className="Transfer-wrapper">{this.state.chosen ? this.renderChosen() : this.renderNotChosen()}</div>
+        return <div className="Transfer-wrapper">
+            {this.state.modal ? this.renderModal() : (this.state.chosen ? this.renderChosen() : this.renderNotChosen())}
+            {this.state.modal ? this.renderModal() : null}
+            </div>
     };
 
 }

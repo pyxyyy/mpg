@@ -13,8 +13,8 @@ class NavBar extends Component {
                 <tr>
                     <td align="center" onClick={() => {this.props.setSelected(0)}}>
                         {this.props.selected === 0
-                            ? <div className="selected"><img className="NavBar-icon" src={require('./stats.svg')} /></div>
-                            : <img className="NavBar-icon" src={require('./stats.svg')} />}
+                            ? <div className="selected"><img className="NavBar-icon" src={require('./home.svg')} /></div>
+                            : <img className="NavBar-icon" src={require('./home.svg')} />}
                     </td>
                     <td align="center" onClick={() => {this.props.setSelected(1)}}>
                         {this.props.selected === 1

@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './Login.css';
 import {send_} from "./mpg";
 
-const desc = "MAKING BANK TRANSFERS TO YOUR PEERS EASY AND SAFE.";
-const desc_lower = "Making bank transfers to your friends easy and safe.";
+const desc = "MAKING BANK TRANSFERS TO YOUR PEERS EASY AND LEGAL.";
+const desc_lower = "Making bank transfers to your friends easy and legal.";
 class Login extends Component {
     constructor(props) {
         super();
