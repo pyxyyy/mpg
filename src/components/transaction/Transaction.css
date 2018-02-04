@@ -1,0 +1,86 @@
+.Transaction {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    height: 120px;
+    width: 414px;
+}
+
+.Transaction-avatar {
+    position: absolute;
+    top: 25px;
+    left: 35px;
+    width: 50px;
+    height: 50px
+}
+
+.Transaction-date {
+    color: #7a7a7a;
+    margin-left: 100px;
+    font-size: 13px;
+}
+
+.Transaction-verify {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 12px;
+    right: 20px;
+}
+
+.Transaction-thumb {
+    width: 20px;
+    height: 18px;
+    position: absolute;
+    bottom: 18px;
+    right: 90px;
+}
+.Transaction-comment {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    bottom: 15px;
+    right: 57px;
+}
+.Transaction-message {
+    color: black;
+    margin-left: 100px;
+    font-size: 14px;
+}
+
+.Transaction-amount {
+    position: absolute;
+    top: 40px;
+    right: 35px;
+    font-size: 20px;
+}
+
+.Transaction-line {
+    position: absolute;
+    bottom: 0;
+    z-index: 90;
+    margin-top: 0;
+    height: 1px;
+    width: 414px;
+    background: linear-gradient(135deg, #5791ba 0, #9e577b);;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(25%, #5791ba), color-stop(75%, #9e577b));
+}
+
+.Tag {
+    border-radius: 5px;
+    border: solid 1px white;
+    color: white;
+    font-size: 13px;
+    padding: 2px 5px;
+    margin-left: 100px;
+}
+
+.tfood {
+    background-color: #9e577b;
+}
+
+.trent {
+    background-color: #737fa2;
+}

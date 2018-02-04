@@ -15,21 +15,23 @@ public class signerSessionCreation {
 
 		//insert document name, first name, last name, transaction name, generic file,
 		DocumentPackage testPackage = PackageBuilder.newPackageNamed("Example hadar")
-				.withSigner(SignerBuilder.newSignerWithEmail("teukgong@dae.com")
-						.withFirstName("Wen")
-						.withLastName("Rui")
-						.withCustomId("Signer1"))
-				.withSigner(SignerBuilder.newSignerWithEmail("teukjeon@sa.com")
+				.withSigner(SignerBuilder.newSignerWithEmail("wenrui@berkeley.edu")
 						.withFirstName("John")
-						.withLastName("Smith")
-						.withCustomId("Signer2"))
+						.withLastName("Doe")
+						.withCustomId("Signer1")
+						.signingOrder(1))
+				.withSigner(SignerBuilder.newSignerWithEmail("smellysocks12314@gmail.com")
+						.withFirstName("Ray")
+						.withLastName("Liau")
+						.withCustomId("Signer2")
+						.signingOrder(2))
 				.withDocument(DocumentBuilder.newDocumentWithName("Test Document")
-						.fromFile("/Users/syang2016/devweek/mpg/API/dummyDoc.pdf")
-						.withSignature(SignatureBuilder.captureFor("teukgong@dae.com")
-                        .atPosition(100, 100)
+						.fromFile("/C:/Users/Wen Rui/Google Drive/Berkeley/DevHacks/mpg/API/LegalAgreement.pdf")
+						.withSignature(SignatureBuilder.captureFor("wenrui@berkeley.edu")
+                        .atPosition(100, 640)
                         .onPage(0))
-                        .withSignature(SignatureBuilder.captureFor("teukjeon@sa.com")
-                                .atPosition(500, 100)
+                        .withSignature(SignatureBuilder.captureFor("smellysocks12314@gmail.com")
+                                .atPosition(100, 740)
                                 .onPage(0)))
 				.build();
 		
@@ -42,6 +44,13 @@ public class signerSessionCreation {
 		String url = authClient.buildRedirectToSigningForSigner(signerAuthenticationToken, packageId.getId());
 		
 		System.out.println(url);
+
+
+		String signerAuthenticationToken2 = eslClient.getAuthenticationTokensService().createSignerAuthenticationToken(packageId.toString(), "Signer2");
+
+		String url2 = authClient.buildRedirectToSigningForSigner(signerAuthenticationToken2, packageId.getId());
+
+		System.out.println(url2);
 
 	}
 

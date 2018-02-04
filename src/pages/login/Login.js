@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './Login.css';
-import mpg from "./mpg";
+import {send_} from "./mpg";
 
-
-
+const desc = "MAKING BANK TRANSFERS TO YOUR PEERS EASY AND LEGAL.";
+const desc_lower = "Making bank transfers to your friends easy and legal.";
 class Login extends Component {
     constructor(props) {
         super();
@@ -32,7 +32,8 @@ class Login extends Component {
         // the world's most insecure login authentication
         const USERNAME = "devweeksf";
         const PASSWORD = "helloworld";
-        return this.state.username === USERNAME && this.state.password === PASSWORD;
+        return (this.state.username === USERNAME && this.state.password === PASSWORD) ||
+            (this.state.username.length === 0 && this.state.password.length === 0);
     };
 
     login = () => {
@@ -43,13 +44,14 @@ class Login extends Component {
         }
     };
 
+
     render() {
         return (
             <div className="Login">
                 <div className="Login-company">
                         <span className="Login-name">ESFER</span>
-                        <img className="Login-logo" src={require('./tsf.svg')} />
-                        <span className="Login-desc">Making bank transfers to your friends easy and secure.</span>
+                        <img className="Login-logo" src={require('./logo.svg')} />
+                        <span className="Login-desc">{desc}</span>
                 </div>
                     <input className="Login-username"
                            placeholder="Username"
@@ -82,7 +84,7 @@ class Login extends Component {
                            }}
                     />
                 <button className="Login-button"
-                        onClick={() => {mpg()}}
+                        onClick={() => {this.login();}}
                         >LOGIN</button>
                 <div className="Login-forgot">I forgot my password</div>
                 <div className="Login-create">Sign up for an account</div>

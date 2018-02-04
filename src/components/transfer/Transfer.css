@@ -1,0 +1,294 @@
+.Transfer {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 414px;
+}
+
+.Transfer-modal {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 414px;
+    z-index: 25;
+}
+
+.doubletick {
+    width: 60px;
+    height: 60px;
+    margin-top: 30px;
+    border-radius: 50px;
+    border: solid 2px #9e577b;
+
+}
+
+.approved {
+    width: 300px;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.space {
+    height: 20px;
+}
+.Transfer-buttons {
+    position: fixed;
+    bottom: 120px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 20px;
+    width: 374px;
+}
+
+.back {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.Transfer-wrapper {
+    margin-top: 60px;
+    width: 100%;
+    height: calc(100% - 120px);
+}
+
+.button-wrapper-main {
+    margin-top: 20px;
+    position: relative;
+    background: linear-gradient(135deg, #5791ba 0, #9e577b);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 30px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+}
+
+.button-main {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: rgba(256, 256,256,1);
+    width: 296px;
+    height: 26px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+    font-family: "Avenir Next", sans-serif;
+    letter-spacing: 1px;
+}
+
+.Transfer-button-wrapper {
+    margin-top: 20px;
+    position: relative;
+    background: linear-gradient(135deg, #5791ba 0, #9e577b);
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+}
+
+.payicon {
+    width: 80%;
+    height: 80%;
+}
+
+.receiveicon {
+    width: 70%;
+    height: 70%;
+}
+
+.Transfer-button {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    background: rgba(256, 256,256,1);
+    width: 96px;
+    height: 96px;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+}
+
+.john {
+    position: relative;
+    margin-top: 15px;
+    font-size: 24px;
+    font-family: "Avenir Next", sans-serif;
+    letter-spacing: 2px;
+    color: black;
+    margin-left: -20px;
+}
+
+.star {
+    position: absolute;
+    top: 1px;
+    right: -30px;
+    width: 25px;
+    height: 25px;
+}
+.Transfer-line {
+    margin-top: -12px;
+    margin-bottom: 15px;
+    height: 1px;
+    width: 400px;
+    background: linear-gradient(135deg, #5791ba 0, #9e577b);;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(white), to(white), color-stop(25%, #5791ba), color-stop(75%, #9e577b));
+}
+.john-user {
+    position: absolute;
+    font-size: 16px;
+    top: 30px;
+    left: 36px;
+    letter-spacing: 1px;
+}
+
+.john-request {
+    margin-top: 50px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "AvenirNext-Medium", sans-serif;
+}
+
+.john-request-short {
+    margin-top: 20px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "AvenirNext-Medium", sans-serif;
+}
+
+.norm {
+    font-family: "Avenir Next", sans-serif;
+}
+
+.request-desc {
+    text-align: center;
+    font-family: "AvenirNext-Medium", sans-serif;
+
+}
+
+.request-extra {
+    text-align: center;
+    font-family: "Avenir Next", sans-serif;
+    font-size: 14px;
+
+}
+
+.request {
+    text-align: center;
+    font-family: "AvenirNext-Medium", sans-serif;
+    color: #9e577b;
+}
+
+.pay {
+    position: absolute;
+    top: 120px;
+    left: 30px;
+    font-size: 16px;
+    font-family: "Avenir Next", sans-serif;
+    letter-spacing: 2px;
+    color: black;
+}
+
+.receive {
+    position: absolute;
+    top: 120px;
+    left: 10px;
+    font-size: 16px;
+    font-family: "Avenir Next", sans-serif;
+    letter-spacing: 2px;
+    color: black;
+}
+
+.load {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #5791ba;
+    opacity: 0.7;
+}
+
+.Favorites {
+    letter-spacing: 2px;
+    font-size: 16px;
+    margin-top: 40px;
+    width: 300px;
+    text-align: center;
+}
+
+.circles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin-top: 20px;
+}
+
+.circle1 {
+   background-color: black;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.bigcircle {
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    margin-top: 40px;
+}
+
+.circle1-img {
+    width: 100%;
+    height: 100%;
+}
+
+.searchbar {
+    margin-top: 20px;
+    position: relative;
+    width: 300px;
+    height: 30px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #5791ba 0, #9e577b);
+}
+
+.searchicon {
+    position: absolute;
+    left: 10px;
+    top: 2px;
+    width: 25px;
+    height: 25px;
+    z-index: 4;
+}
+
+.search {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    outline: none;
+    border: none;
+    background: white;
+    width: 236px;
+    height: 26px;
+    border-radius: 20px;
+    padding: 0 20px 0 40px;
+    font-size: 14px;
+    font-family: "Avenir Next",sans-serif;
+}
