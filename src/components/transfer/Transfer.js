@@ -78,10 +78,10 @@ class Transfer extends Component {
                 <div className="Favorites">FAVORITES</div>
                 <div className="circles">
                     <div className="circle1">
-                        <img className="circle1-img" src={require('./wr.png')} />
+                        <img className="circle1-img" src={require('./eunice.png')} />
                     </div>
                     <div className="circle1">
-                        <img className="circle1-img" src={require('./wr.png')}
+                        <img className="circle1-img" src={require('./john.jpg')}
                              onClick={() => {
                                  this.setState({
                                      chosen: true
@@ -90,24 +90,24 @@ class Transfer extends Component {
                         />
                     </div>
                     <div className="circle1">
-                        <img className="circle1-img" src={require('./wr.png')} />
+                        <img className="circle1-img" src={require('./wx.png')} />
                     </div>
                     <div className="circle1">
-                        <img className="circle1-img" src={require('./wr.png')} />
+                        <img className="circle1-img" src={require('./kartikye.png')} />
                     </div>
                 </div>
                 <div className="circles">
                     <div className="circle1">
-                        <img className="circle1-img" src={require('./wr.png')} />
+                        <img className="circle1-img" src={require('./dao.png')} />
                     </div>
                     <div className="circle1">
-                        <img className="circle1-img" src={require('./wr.png')} />
+                        <img className="circle1-img" src={require('./crystal.png')} />
                     </div>
                     <div className="circle1">
-                        <img className="circle1-img" src={require('./wr.png')} />
+                        <img className="circle1-img" src={require('./kate.png')} />
                     </div>
                     <div className="circle1">
-                        <img className="circle1-img" src={require('./wr.png')} />
+                        <img className="circle1-img" src={require('./chinmoy.png')} />
                     </div>
                 </div>
 
