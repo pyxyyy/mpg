@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Login.css';
-import {mpg} from './mpg.js';
+import mpg from "./mpg";
+
 
 
 class Login extends Component {
